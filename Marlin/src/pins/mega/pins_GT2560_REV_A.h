@@ -95,6 +95,7 @@
 #ifndef FAN_PIN
   #define FAN_PIN                              7
 #endif
+#define FAN2_PIN            32
 
 //
 // Misc. Functions
@@ -105,47 +106,7 @@
 #define SUICIDE_PIN                           54  // Must be enabled at startup to keep power flowing
 #define KILL_PIN                              -1
 
-#if HAS_SPI_LCD
-
-  #define BEEPER_PIN                          18
-
-  #if ENABLED(NEWPANEL)
-
-    #if ENABLED(MKS_MINI_12864)
-      #define DOGLCD_A0                        5
-      #define DOGLCD_CS                       21
-      #define BTN_EN1                         40
-      #define BTN_EN2                         42
-    #else
-      #define LCD_PINS_RS                     20
-      #define LCD_PINS_ENABLE                 17
-      #define LCD_PINS_D4                     16
-      #define LCD_PINS_D5                     21
-      #define LCD_PINS_D6                      5
-      #define LCD_PINS_D7                      6
-      #define BTN_EN1                         42
-      #define BTN_EN2                         40
-    #endif
-
-    #define BTN_ENC                           19
-    #define SD_DETECT_PIN                     38
-
-  #else                                           // !NEWPANEL
-
-    #define SHIFT_CLK                         38
-    #define SHIFT_LD                          42
-    #define SHIFT_OUT                         40
-    #define SHIFT_EN                          17
-
-    #define LCD_PINS_RS                       16
-    #define LCD_PINS_ENABLE                    5
-    #define LCD_PINS_D4                        6
-    #define LCD_PINS_D5                       21
-    #define LCD_PINS_D6                       20
-    #define LCD_PINS_D7                       19
-
-    #define SD_DETECT_PIN                     -1
-
-  #endif // !NEWPANEL
-
-#endif // HAS_SPI_LCD
+#define BEEPER_PIN                      5
+#define BTN_EN1                         38 //16
+#define BTN_EN2                         40 // 17 
+#define BTN_ENC                         19 //18
